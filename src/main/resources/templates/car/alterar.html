@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css">
 <!--    <link rel="stylesheet" href="/css/style.css">-->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <script src="https://kit.fontawesome.com/1a0287ac30.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,7 @@
         <div class="row">
             <button type="submit" class="btn btn-success offset-md-5">Salvar</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-outline-danger">Voltar</a>
+            <a th:href="@{/carros-adicionados}" class="btn btn-outline-danger">Voltar</a>
 
         </div>
 

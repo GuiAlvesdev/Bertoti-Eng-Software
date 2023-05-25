@@ -26,12 +26,16 @@
                 </div>
 
                 <form method="post" action="/login" th:object="${usuario}">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="username">
+                    <div class="alert alert-danger" role="alert" th:if="${msg}">
+                        <strong th:text="${msg}"></strong>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="insira sua senha">
+                        <input type="text" th:field="*{nomedeusuario}" class="form-control" placeholder="username">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password"  th:field="*{senha}" class="form-control" placeholder="insira sua senha">
                     </div>
 
                     <div class="cadastro">

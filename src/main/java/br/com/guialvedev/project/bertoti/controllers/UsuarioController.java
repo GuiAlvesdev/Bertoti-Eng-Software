@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.security.NoSuchAlgorithmException;
 
 @Controller
@@ -57,7 +58,7 @@ public class UsuarioController {
 
 
         @PostMapping("/login")
-        public ModelAndView login(Usuario usuario, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExc {
+        public ModelAndView login(@Valid Usuario usuario, BindingResult br, HttpSession session) throws NoSuchAlgorithmException, ServiceExc {
             ModelAndView mv = new ModelAndView();
             mv.addObject("usuario", new Usuario());
             if (br.hasErrors()) {
@@ -84,6 +85,13 @@ public class UsuarioController {
         return mv;
 
 
+    }
+
+
+    @PostMapping("/logout")
+    public ModelAndView logout(HttpSession session){
+            session.invalidate();
+            return login();
     }
 
 

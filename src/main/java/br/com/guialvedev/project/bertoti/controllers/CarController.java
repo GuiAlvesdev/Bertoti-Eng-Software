@@ -38,7 +38,7 @@ public class CarController {
             mv.setViewName("car/cadastro");
             mv.addObject("car");
         }else{
-            mv.setViewName("redirect: /car/listCarros");
+            mv.setViewName("redirect:/carros-adicionados");
             carRepository.save(car);
 
         }
@@ -70,7 +70,7 @@ public class CarController {
     public ModelAndView alterar(Car car){
         ModelAndView mv = new ModelAndView();
         carRepository.save(car);
-        mv.setViewName("redirect: /listCarros");
+        mv.setViewName("redirect:/carros-adicionados");
         return mv;
     }
 
