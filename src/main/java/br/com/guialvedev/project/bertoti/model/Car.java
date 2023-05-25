@@ -1,8 +1,12 @@
 package br.com.guialvedev.project.bertoti.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
+@Table(name = "car")
 public class Car {
 
     @Id
@@ -10,12 +14,16 @@ public class Car {
     private Integer id;
 
     @Column(name = "marca")
+    @NotBlank(message = " campo obrigatorio")
     private String marca;
 
     @Column(name = "modelo")
+    @NotNull(message = "modelo nao pode ser nulo")
     private String modelo;
 
     @Column(name = "placa")
+    @Size(min = 8, message = "a placa deve conter 8 caracteres")
+    @NotBlank(message = " campo obrigatorio")
     private String placa;
 
     @Column(name = "cor")

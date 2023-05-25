@@ -24,7 +24,10 @@
         <form  class="cad-form" method="post" action="/InsertCar" th:object="${car}">
 
         <div class="row">
-        <div class="col-md-6 form-group">
+            <div class="col-md-6 form-group offset-md-3">
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('marca')}">
+                <label class="validation-message" th:errors="*{marca}"></label>
+            </div>
             <label> Marca do Carro: </label>
             <input  class="form-control" placeholder="Ex: Volkswagen" th:field="*{marca}">
         </div>
@@ -32,22 +35,32 @@
 
 
         <div class="row">
-            <div class="col-md-6 form-group">
-                <label> Marca do Carro: </label>
+            <div class="col-md-6 form-group offset-md-3">
+                <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('modelo')}">
+                    <label class="validation-message" th:errors="*{modelo"}></label>
+                </div>
+                <label> Modelo do Carro: </label>
                 <input  class="form-control" placeholder="Ex: Gol,Celta,Amarok" th:field="*{modelo}">
             </div>
         </div>
 
+
             <div class="row">
-                <div class="col-md-6 form-group">
-                    <label> Marca do Carro: </label>
+                <div class="col-md-6 form-group offset-md-3">
+                    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('placa')}">
+                        <label class="validation-message" th:errors="*{placa}"></label>
+                    </div>
+                    <label> Placa do Carro: </label>
                     <input  class="form-control" placeholder="Ex: hhh-1l25" th:field="*{placa}">
                 </div>
             </div>
 
 
             <div class="row">
-                <div class="col-md-6 form-group">
+                <div class="col-md-6 form-group offset-md-3">
+                    <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('cor')}">
+                        <label class="validation-message" th:errors="*{cor}"></label>
+                    </div>
                     <label> Marca do Carro: </label>
                     <input  class="form-control" placeholder="Ex: Preto,Amarelo,Cinza" th:field="*{cor}">
                 </div>
